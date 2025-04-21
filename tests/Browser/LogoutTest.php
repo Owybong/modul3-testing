@@ -16,9 +16,9 @@ class LogoutTest extends DuskTestCase
                     ->type(field: 'email', value: 'owy0107@gmail.com')
                     ->type(field: 'password', value: '1234')
                     ->press(button: 'LOG IN')
-                    ->visit('/notes')
-                    // ->waitFor('#add-note-button', 5)
-                    ->press('#delete-1');
+                    ->assertPathIs('/dashboard')  
+                    ->click('#click-dropdown')
+                    ->clickLink('Log Out');
                     // ->assertPath('/notes')
                     // ->press('Create Note')
                     // ->type('title','test1')
